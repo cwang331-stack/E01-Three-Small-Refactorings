@@ -28,16 +28,9 @@
     const swatch = document.querySelector("#swatch");
 
     function update() {
-      if (true) {
-        let item = p_collection[0];
-        for (let i = 0; i < p_collection.length; i++) {
-          if (i === p_index) item = p_collection[i];
-        }
-        label.textContent = item.name;
-        swatch.style.backgroundColor = item.color;
-      } else {
-        console.log("ignored update while updates are disabled");
-      }
+      let item = p_collection[p_index];
+      label.textContent = item.name;
+      swatch.style.backgroundColor = item.color;
     }
 
     document.querySelector("#next").addEventListener("click", () => {
