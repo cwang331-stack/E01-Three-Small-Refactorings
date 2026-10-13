@@ -45,11 +45,10 @@
         {
           continue;
         }
-        // Keep target only if the current target has more health.
-          if (target && target.health > enemy.health) {
-          continue;
-          }
-          target = enemy;
+        //if target has nothing or if the target has less health, target = enemy
+        if (!target || enemy.health >= target.health){
+          target =  enemy;
+        }
       }
       return target;
     }
